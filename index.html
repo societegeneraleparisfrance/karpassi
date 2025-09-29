@@ -1,0 +1,1320 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KARPASSI - Huile KITAN | Excellence du Nord Ivoirien</title>
+    <meta name="description" content="KARPASSI - Producteur d'huile de coton de haute pureté - Usine moderne à GBON, fondée par le Dr Lanssiné Traoré">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --primary-blue: #1E3A5F;
+            --secondary-blue: #2D4B73;
+            --dark-blue: #0A1F3A;
+            --ivory-red: #E63946;
+            --ivory-green: #2A9D8F;
+            --white: #FFFFFF;
+            --light-gray: #F8F9FA;
+            --medium-gray: #E9ECEF;
+            --dark-gray: #2D3748;
+            --text-dark: #1A202C;
+            --success: #38A169;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-hover: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header Premium */
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            border-bottom: 3px solid var(--primary-gold);
+        }
+
+        .header.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(255, 255, 255, 0.99);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--ivory-red) 50%, var(--primary-gold) 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: var(--white);
+            font-size: 1.4rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--white);
+        }
+
+        .logo:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: rotate(45deg);
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-main {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--ivory-red) 50%, var(--primary-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+
+        .brand-sub {
+            font-size: 0.9rem;
+            color: var(--ivory-green);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, var(--ivory-red), var(--primary-gold), var(--ivory-green));
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover:after {
+            width: 100%;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-blue);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--ivory-red) 0%, var(--primary-gold) 100%);
+            color: var(--white) !important;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            font-weight: 700;
+            border: 2px solid transparent;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--ivory-green) 100%);
+        }
+
+        .cta-button:after {
+            display: none;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            padding: 0.5rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-blue);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        /* Hero Section Ultra Premium */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 40%, var(--ivory-red) 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(42, 157, 143, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(230, 57, 70, 0.05) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .company-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid var(--primary-gold);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            font-size: 1.1rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, #FFD700 50%, var(--ivory-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Lora', serif;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.4s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            box-shadow: var(--shadow);
+            border: 2px solid transparent;
+            min-width: 200px;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--ivory-red) 0%, var(--primary-gold) 100%);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--ivory-green) 100%);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--white);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
+            border-color: var(--primary-gold);
+        }
+
+        /* Section Fondateur VIP */
+        .fondateur {
+            padding: 5rem 0;
+            background: var(--light-gray);
+            position: relative;
+        }
+
+        .fondateur:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, var(--ivory-red), transparent);
+            opacity: 0.1;
+        }
+
+        .fondateur-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .fondateur-image {
+            position: relative;
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--ivory-red) 100%);
+            height: 400px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-hover);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-placeholder:before {
+            content: '🦁 DR LANSSINÉ TRAORÉ';
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: bold;
+            opacity: 0.9;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .fondateur-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--ivory-red), var(--primary-gold));
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            box-shadow: var(--shadow);
+            font-size: 0.9rem;
+        }
+
+        .fondateur-content h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .fondateur-content h3 {
+            color: var(--ivory-red);
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            margin-bottom: 1.5rem;
+            font-family: 'Lora', serif;
+        }
+
+        .fondateur-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-gray);
+            line-height: 1.7;
+        }
+
+        .expertise-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .expertise-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--medium-gray);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .expertise-list li:before {
+            content: '✓';
+            color: var(--ivory-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Section Produits Premium */
+        .produits {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-family: 'Lora', serif;
+        }
+
+        .produits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .produit-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            border: 1px solid var(--medium-gray);
+        }
+
+        .produit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .produit-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--ivory-red) 0%, var(--primary-gold) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--white);
+        }
+
+        .produit-content {
+            padding: 2rem;
+        }
+
+        .produit-content h3 {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .produit-features {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .produit-features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .produit-features li:before {
+            content: '•';
+            color: var(--ivory-green);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .produit-price {
+            font-size: 1.5rem;
+            color: var(--ivory-red);
+            font-weight: 800;
+            margin: 1rem 0;
+        }
+
+        /* Section Processus Industriel */
+        .processus {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--medium-gray) 100%);
+        }
+
+        .process-timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-timeline:before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--ivory-red), var(--primary-gold), var(--ivory-green));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .process-step {
+            padding: 1.5rem;
+            position: relative;
+            width: 50%;
+            margin-bottom: 3rem;
+        }
+
+        .process-step:nth-child(odd) {
+            left: 0;
+        }
+
+        .process-step:nth-child(even) {
+            left: 50%;
+        }
+
+        .step-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, var(--ivory-red), var(--primary-gold));
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 800;
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            border: 3px solid var(--white);
+        }
+
+        .process-step:nth-child(even) .step-number {
+            left: -25px;
+        }
+
+        .process-step:nth-child(odd) .step-number {
+            right: -25px;
+            left: auto;
+        }
+
+        /* Section Contact Premium */
+        .contact {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+            margin-bottom: 1.5rem;
+            color: var(--primary-gold);
+        }
+
+        .contact-details {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .contact-details li {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1rem;
+        }
+
+        .contact-details li i {
+            color: var(--primary-gold);
+            font-size: 1.3rem;
+            width: 25px;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Footer Ultra Pro */
+        .footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+            border-top: 3px solid var(--ivory-green);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--ivory-green);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .social-links a:hover {
+            background: var(--ivory-red);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design Optimisé */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .hero-content {
+                padding: 1.5rem;
+            }
+            
+            .fondateur-container,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .process-timeline:before {
+                left: 30px;
+            }
+            
+            .process-step {
+                width: 100%;
+                padding-left: 60px;
+                padding-right: 1rem;
+            }
+            
+            .process-step:nth-child(even) {
+                left: 0;
+            }
+            
+            .process-step:nth-child(even) .step-number {
+                left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--white);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 2rem;
+                padding-top: 3rem;
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .hamburger {
+                display: flex;
+                z-index: 1000;
+            }
+            
+            .hero {
+                padding-top: 70px;
+                min-height: 90vh;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+                padding: 1rem 2rem;
+            }
+            
+            .image-placeholder {
+                height: 300px;
+            }
+            
+            .produits-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .nav {
+                padding: 0.8rem 0;
+            }
+            
+            .logo {
+                width: 50px;
+                height: 50px;
+                font-size: 1.1rem;
+            }
+            
+            .brand-main {
+                font-size: 1.4rem;
+            }
+            
+            .brand-sub {
+                font-size: 0.8rem;
+            }
+            
+            .company-badge {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero-content {
+                padding: 1rem;
+            }
+            
+            .fondateur-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Menu mobile actif */
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Ultra Premium -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <div class="logo">K</div>
+                <div class="brand-text">
+                    <div class="brand-main">KARPASSI</div>
+                    <div class="brand-sub">HUILE KITAN</div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#fondateur">Notre Fondateur</a></li>
+                <li><a href="#produits">Nos Produits</a></li>
+                <li><a href="#processus">Processus</a></li>
+                <li><a href="#contact" class="cta-button"><i class="fas fa-phone"></i> Nous Contacter</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section Ultra Premium -->
+    <section class="hero" id="accueil">
+        <div class="hero-content">
+            <div class="company-badge">
+                <i class="fas fa-crown"></i> KARPASSI ENTERPRISE
+            </div>
+            <h1>HUILE KITAN<br><span>L'Excellence du Nord Ivoirien</span></h1>
+            <p>Société KARPASSI - Producteur d'huile de coton de haute pureté, issue de notre usine moderne située au cœur de la Commune de GBON. Fondée par le Dr Lanssiné Traoré, professeur à l'Université de Man.</p>
+            <div class="hero-buttons">
+                <a href="#processus" class="btn-primary"><i class="fas fa-industry"></i> Découvrir notre processus</a>
+                <a href="#contact" class="btn-secondary"><i class="fas fa-handshake"></i> Devenir distributeur</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Fondateur VIP -->
+    <section class="fondateur" id="fondateur">
+        <div class="container">
+            <div class="fondateur-container">
+                <div class="fondateur-image">
+                    <div class="image-placeholder"></div>
+                    <div class="fondateur-badge">
+                        <i class="fas fa-graduation-cap"></i> Professeur Université
+                    </div>
+                </div>
+                <div class="fondateur-content">
+                    <h2>Docteur Lanssiné Traoré</h2>
+                    <h3>Fondateur & Visionnaire de KARPASSI</h3>
+                    <p>Expert reconnu dans le domaine agro-alimentaire, le Dr Lanssiné Traoré allie savoir scientifique et passion pour le développement économique de la Côte d'Ivoire à travers sa société KARPASSI.</p>
+                    
+                    <ul class="expertise-list">
+                        <li>Professeur à l'Université de Man</li>
+                        <li>Expert en transformation agro-alimentaire</li>
+                        <li>15 ans d'expérience dans la recherche</li>
+                        <li>Fondateur de KARPASSI Enterprise</li>
+                        <li>Pionnier du développement industriel local</li>
+                    </ul>
+                    
+                    <p>"Notre mission chez KARPASSI est d'allier la rigueur scientifique aux traditions de qualité pour offrir la meilleure huile de coton du marché."</p>
+                    
+                    <a href="#contact" class="btn-primary"><i class="fas fa-envelope"></i> Contacter le Dr Traoré</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Produits Premium -->
+    <section class="produits" id="produits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Produits KARPASSI</h2>
+                <p>Découvrez notre gamme complète d'huile de coton KITAN, fabriquée selon les standards de qualité les plus exigeants</p>
+            </div>
+            
+            <div class="produits-grid">
+                <div class="produit-card">
+                    <div class="produit-image">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                    <div class="produit-content">
+                        <h3>Huile KITAN Premium</h3>
+                        <ul class="produit-features">
+                            <li>Pureté exceptionnelle 99.9%</li>
+                            <li>Conditionnement bouteille 1L</li>
+                            <li>Idéale pour la cuisine haut de gamme</li>
+                            <li>Certifiée qualité alimentaire</li>
+                        </ul>
+                        <div class="produit-price">12.500 FCFA</div>
+                        <a href="#contact" class="btn-primary">Commander</a>
+                    </div>
+                </div>
+                
+                <div class="produit-card">
+                    <div class="produit-image">
+                        <i class="fas fa-drum"></i>
+                    </div>
+                    <div class="produit-content">
+                        <h3>Huile KITAN Professionnelle</h3>
+                        <ul class="produit-features">
+                            <li>Format bidon 5L et 20L</li>
+                            <li>Pour restaurants et industries</li>
+                            <li>Rapport qualité-prix optimal</li>
+                            <li>Livraison en gros disponible</li>
+                        </ul>
+                        <div class="produit-price">55.000 FCFA (5L)</div>
+                        <a href="#contact" class="btn-primary">Devenir distributeur</a>
+                    </div>
+                </div>
+                
+                <div class="produit-card">
+                    <div class="produit-image">
+                        <i class="fas fa-truck-loading"></i>
+                    </div>
+                    <div class="produit-content">
+                        <h3>Huile KITAN Industrielle</h3>
+                        <ul class="produit-features">
+                            <li>Conditionnement fût 200L</li>
+                            <li>Pour usines agro-alimentaires</li>
+                            <li>Prix dégressif selon volume</li>
+                            <li>Contrôle qualité renforcé</li>
+                        </ul>
+                        <div class="produit-price">Sur devis</div>
+                        <a href="#contact" class="btn-primary">Demander un devis</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Processus Industriel -->
+    <section class="processus" id="processus">
+        <div class="container">
+            <div class="section-header">
+                <h2>Processus KARPASSI</h2>
+                <p>Découvrez notre chaîne de production moderne et rigoureuse, garantissant une qualité exceptionnelle</p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">1</div>
+                        <h3>Réception des Graines</h3>
+                        <p>Contrôle qualité rigoureux des graines de coton à leur arrivée à l'usine KARPASSI de GBON</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">2</div>
+                        <h3>Nettoyage & Tri</h3>
+                        <p>Élimination des impuretés et sélection des meilleures graines pour l'extraction</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">3</div>
+                        <h3>Décorticage</h3>
+                        <p>Séparation mécanique des coques et des amandes avec précision</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">4</div>
+                        <h3>Pressage à Froid</h3>
+                        <p>Extraction de l'huile par pression mécanique sans traitement chimique</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">5</div>
+                        <h3>Filtration & Raffinage</h3>
+                        <p>Procédé de filtration avancé pour une pureté optimale</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">6</div>
+                        <h3>Conditionnement</h3>
+                        <p>Mise en bouteille stérile avec contrôle qualité final</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact Premium -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contactez KARPASSI</h3>
+                    <p>Rejoignez notre réseau de distributeurs ou commandez nos produits directement</p>
+                    
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>KARPASSI Enterprise</strong><br>
+                                Usine Huile KITAN<br>
+                                Commune de GBON, Nord de la Côte d'Ivoire
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Dr Lanssiné Traoré</strong><br>
+                                +225 07 07 33 29 49
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email Professionnel</strong><br>
+                                contact@karpassi.ci
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Horaires</strong><br>
+                                Lundi - Vendredi: 7h00 - 18h00
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" required placeholder="Votre nom">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Entreprise</label>
+                            <input type="text" id="company" placeholder="Nom de votre société">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" required placeholder="Votre numéro">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interest">Votre intérêt</label>
+                            <select id="interest">
+                                <option>Devenir distributeur</option>
+                                <option>Commande en gros</option>
+                                <option>Demande de devis</option>
+                                <option>Partnership</option>
+                                <option>Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" placeholder="Décrivez votre projet..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary" style="width: 100%">
+                            <i class="fas fa-paper-plane"></i> Envoyer la demande
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Ultra Pro -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>KARPASSI Enterprise</h3>
+                    <p>Leader dans la production d'huile de coton de qualité supérieure en Côte d'Ivoire. Usine moderne implantée à GBON.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Liens rapides</h3>
+                    <a href="#accueil">Accueil</a><br>
+                    <a href="#fondateur">Notre Fondateur</a><br>
+                    <a href="#produits">Nos Produits</a><br>
+                    <a href="#processus">Processus</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Dr Lanssiné Traoré - Fondateur<br>
+                    +225 07 07 33 29 49<br>
+                    contact@karpassi.ci</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Localisation</h3>
+                    <p>KARPASSI Enterprise<br>
+                    Usine Huile KITAN<br>
+                    Commune de GBON<br>
+                    Nord de la Côte d'Ivoire</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 KARPASSI Enterprise. Tous droits réservés. | Site créé avec excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const header = document.getElementById('header');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre message ! Le Dr Lanssiné Traoré vous contactera rapidement.');
+            this.reset();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = document.querySelectorAll('.fondateur-container, .produits-grid, .process-step');
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                if (!e.target.closest('.nav') && navMenu.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
